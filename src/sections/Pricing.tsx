@@ -62,9 +62,10 @@ export const Pricing = () => {
           {pricingTiers.map((tier) => ( 
             <div key={tier.title}> 
             <div className="text-lg font-bold text-black/50">
+            
               <h3>{tier.title}</h3> 
               <div className="inline-flex text-sm px-4 py-1.5 rounded-xl border border-white/20">Popular</div>
-              <span className="bg-[linear-gradent(to_right,#DD7DDF, #E1CD86, #BBCB92, #71C2EFFFF, #DD7DDF)]">Popular</span>
+              <span className="bg-[linear-gradent(to_right,#DD7DDF, #E1CD86, #BBCB92, #71C2EFFFF, #DD7DDF)] text-transparent bg-clip-text font-medium">Popular</span>
               </div>
               <div className={`flex items-baseline gap-1 mt-[30px] ${tier.inverse ? 'text-white' : 'text-black'}`}> 
                 <span className="text-4xl font-bold tracking-tighter leading-none">${tier.monthlyPrice}</span> 
