@@ -1,3 +1,7 @@
+import CheckIcon from "../../assets/icons/check.svg";
+import { twMerge } from "tailwind-merge";
+
+
 const pricingTiers = [
   {
     title: "Free",
@@ -58,15 +62,22 @@ export const Pricing = () => {
         <p className="sectiion-description mt-5"> 
           Free Forever. Upgrade for unlimited tasks, better security, and exclusive features 
         </p> 
-        <div className="p-10 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#EAEAEA] grid grid-cols-1 md:grid-cols-3 gap-10"> 
+        <div className={twMerge("p-10 border border-[#F1F1F1] border-black rounded-3xl shadow-[0_7px_14px_#EAEAEA] grid grid-cols-1 md:grid-cols-3 gap-10", inverse === true && 'border-black text-white/60' )}> Free
           {pricingTiers.map((tier) => ( 
             <div key={tier.title}> 
             <div className="text-lg font-bold text-black/50">
-            
+            </div>
+
+            { tier.popular === true && (
+              <>
               <h3>{tier.title}</h3> 
               <div className="inline-flex text-sm px-4 py-1.5 rounded-xl border border-white/20">Popular</div>
-              <span className="bg-[linear-gradent(to_right,#DD7DDF, #E1CD86, #BBCB92, #71C2EFFFF, #DD7DDF)] text-transparent bg-clip-text font-medium">Popular</span>
-              </div>
+              <span className="bg-[linear-gradent(to_right,#DD7DDF, #E1CD86, #BBCB92, #71C2EFFFF, #DD7DDF)] text-transparent bg-clip-text font-medium">
+                Popular
+                </span>
+              </>
+            )}
+
               <div className={`flex items-baseline gap-1 mt-[30px] ${tier.inverse ? 'text-white' : 'text-black'}`}> 
                 <span className="text-4xl font-bold tracking-tighter leading-none">${tier.monthlyPrice}</span> 
                 <span className="tracking-tight font-bold text-black/50">/month</span> 
