@@ -71,7 +71,7 @@ export const Pricing = () => {
               )}
             >
               <div className="flex justify-between items-center">
-                <h3 className={`text-lg font-bold ${tier.inverse ? 'text-white' : 'text-black/50'}`}>
+                <h3 className={`text-lg font-bold ${tier.inverse ? 'text-white/60' : 'text-black/50'}`}>
                   {tier.title}
                 </h3>
                 {tier.popular && (
@@ -92,7 +92,7 @@ export const Pricing = () => {
                 </span>
               </div>
 
-              <button className="btn primary w-full mt-[30px]">
+              <button className={`btn primary w-full mt-[30px]  ${tier.inverse ? 'bg-white' : 'text-black'}`}>
                 {tier.buttonText}
               </button>
 
