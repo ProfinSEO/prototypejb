@@ -1,5 +1,6 @@
 import CheckIcon from "../../assets/check.svg";
 import { twMerge } from "tailwind-merge";
+import Image from "next/image";
 
 
 const pricingTiers = [
